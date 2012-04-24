@@ -1,0 +1,3 @@
+#!/bin/bash
+#Deployment script for TreeCage.  Run this at the root of the project (same location as www dir)
+cat <<<"SetEnv APPROOT $PWD" > www/.htaccess

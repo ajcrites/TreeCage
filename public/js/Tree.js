@@ -1,10 +1,9 @@
 function Tree(canvas) {
    this.canvas = canvas;
-   this.empty = true;
 
    this.render = function(json) {
-      this.empty = false;
-      this.appendNode(json.root, json.depth * 25, 0);
+      this.appendNode(json.root, json.height * 25, 0);
+      $("#traversal-methods").fadeIn('fast');
    }
 
    this.appendNode = function (node, left, top) {
@@ -21,7 +20,6 @@ function Tree(canvas) {
 
    this.clear = function () {
       $("#tree").html('');
-      this.empty = true;
       $("#traversal-methods").fadeOut('fast');
    }
 }

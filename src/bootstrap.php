@@ -23,11 +23,22 @@ function route() {
 
 $controller = route();
 
-if ($controller) {
-   list($cont) = $cont;
+function __tree_autoload($class) {
+   $pbts = $_SERVER['APPROOT'] . '/lib/php-binary-tree/src';
+   if (file_exists("$pbts/$class.php")) {
+      include "$pbts/$class.php";
+   }
+   else if (file_exists("$pbts/node/$class.php")) {
+      include "$pbts/node/$class.php";
+   }
+}
+spl_autoload_register('__tree_autoload');
 
-   if (is_readable(CONTROLLERS . "$cont.php")) {
-      require CONTROLLERS . "$cont.php";
+if ($controller) {
+   list($cont) = $controller;
+
+   if (is_readable(CONTROLLERS . "/$cont.php")) {
+      require CONTROLLERS . "/$cont.php";
    }
    else {
       require CONTROLLERS . "/404.php";

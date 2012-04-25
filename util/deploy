@@ -1,5 +1,10 @@
 #!/bin/bash
 #Deployment script for TreeCage.  Run this at the root of the project (same location as www dir)
 read -p "Root URL: " ROOT
-cat <<<"SetEnv APPROOT $PWD
+cat <<<"RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* /$ROOT/index.php/\$0/ [PT]
+
+SetEnv APPROOT $PWD
 SetEnv ROOT $ROOT" > public/.htaccess

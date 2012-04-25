@@ -17,5 +17,5 @@ function __tree_autoload($class) {
 }
 spl_autoload_register('__tree_autoload');
 
-include 'view/index.html';
+include 'view/main.html';
 ?>

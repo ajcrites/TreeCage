@@ -6,6 +6,8 @@
  * @package treecage
  */
 
+session_start();
+
 function route() {
    return array_values(
       array_filter(

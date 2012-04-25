@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Tree Cage</title>
+   <link rel="stylesheet" type="text/css" href="/css/mail.css" />
+</head>
+<body>
+
+   <div id="nojs">
+      This demo requires JavaScript to be enabled.
+   </div>
+
+   <div id="js">
+      <p id="error"></p>
+      <p>
+         This is a visual demo of the <a target="_blank" href="http://github.com/ajcrites/php-binary-tree">PHP-Binary-Tree</a> project.
+         The nodes will display graphically below.  You can add a nodes, use the sample, and watch the tree traversal methods.
+      </p>
+      <p>
+         <input type="submit" id="default" value="Default Example" />
+         <input type="text" id="node-to-add" placeholder="Add Node"/> <input class="off" type="submit" id="add-node" value="Add Node" />
+         <input type="submit" id="clear" value="Clear" />
+      </p>
+      <p id="tree"></p>
+      <p id="traversal-methods">
+         <a href="/traverse/inorder">Inorder Traversal</a>
+         <a href="/traverse/preorder">Preorder Traversal</a>
+         <a href="/traverse/postorder">Postorder Traversal</a>
+      </p>
+   </div>
+
+   <script>//<![CDATA[
+      document.getElementById('nojs').style.display = 'none';
+      document.getElementById('js').style.display = 'block';
+   //]]></script>
+   <script src="http://code.jquery.com/jquery.min.js"></script>
+   <script src="/js/Tree.js"></script>
+   <script src="/js/main.js"></script>
+</body>
+</html>

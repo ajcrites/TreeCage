@@ -1,3 +1,3 @@
 [submodule "lib/php-binary-tree"]
 	path = lib/php-binary-tree
-	url = ./lib/php-binary-tree/
+	url = git://github.com/ajcrites/php-binary-tree

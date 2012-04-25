@@ -1,4 +1,4 @@
-var tree = new Tree();
+var tree = new Tree($("#tree"));
 
 $("#submit").on('click', function () {
    $.post('/default')
@@ -40,4 +40,24 @@ $("#clear").on('click', function () {
          $("#error").text('There was an error trying to clear the tree');
       })
    ;
+});
+
+$("#traversal-methods a").on('click', function (e) {
+   $.get($(this).attr('href'))
+      .done(function (pattern) {
+         tree.traverse(pattern);
+      })
+      .fail(function () {
+         $("#error").text('Unable to display traversal pattern');
+      });
+   ;
+});
+
+$("[type=submit]").on('click', function () {
+   if (tree.notEmpty()) {
+      $("#traversal-methods").fadeIn('fast');
+   }
+   else {
+      $("#traversal-methods").fadeOut('fast');
+   }
 });

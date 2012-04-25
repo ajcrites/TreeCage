@@ -94,3 +94,9 @@ input:focus {
    box-shadow: 2px 2px 5px #08C;
    background-color: #DDD;
 }
+
+input[type=submit].off, input[type=submit].off:hover {
+   background: darkgray;
+   color: #CCC;
+   text-shadow: none;
+}

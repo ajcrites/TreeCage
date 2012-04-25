@@ -4,6 +4,7 @@ function Tree(canvas) {
    this.render = function(json) {
       this.appendNode(json.root, json.height * 25, 0);
       $("#traversal-methods").fadeIn('fast');
+      $("#tree").height(json.height * 25);
    }
 
    this.appendNode = function (node, left, top) {

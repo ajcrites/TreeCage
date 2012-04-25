@@ -6,8 +6,6 @@
  * @package treecage
  */
 
-session_start();
-
 function route() {
    return array_values(
       array_filter(
@@ -33,6 +31,8 @@ function __tree_autoload($class) {
    }
 }
 spl_autoload_register('__tree_autoload');
+
+session_start();
 
 if ($controller) {
    list($cont) = $controller;

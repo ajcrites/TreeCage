@@ -20,15 +20,21 @@ $("#node-to-add").on('keyup', function () {
    }
 });
 
-$("#add-node:not(.off)").on('click', function () {
-   $.post('add/' + $("#node-to-add").val())
+$("#js").on('click', '#add-node:not(.off)', function () {
+   $.post('add', 'node=' + $("#node-to-add").val())
       .done(function (json) {
+         $("#node-to-add").val('');
+         $("#add-node").addClass('off');
          tree.render(json);
       })
       .fail(function () {
          $("#error").text('There was an error trying to add a node');
       })
    ;
+});
+
+$("#add-node.off").on('click', function () {
+   $("#node-to-add").focus();
 });
 
 $("#clear").on('click', function () {

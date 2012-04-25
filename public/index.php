@@ -18,8 +18,13 @@ if (strpos($_SERVER['REQUEST_URI'], 'index.') !== false) {
 }
 
 set_include_path(get_include_path() . ":$app/src:$app/lib");
+
+/**#@+
+ * Configuration constants
+ */
 define('CONTROLLERS', "$app/src/controllers");
 define('VIEWS', "$app/src/view");
+/**#@-*/
 
 require 'bootstrap.php';
 ?>

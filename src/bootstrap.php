@@ -1,11 +1,14 @@
 <?php
 /**
  * The purpose of this file is to define all necessary functionality for TreeCage and find the route
- * @author Andrew Crites <andrew@gleim.com>
+ * @author Andrew Crites <explosion-pills@aysites.com>
  * @copyright 2012
  * @package treecage
  */
 
+/**
+ * Create a route to a controller plus data based on the client request
+ */
 function route() {
    return array_values(
       array_filter(
@@ -34,6 +37,10 @@ spl_autoload_register('__tree_autoload');
 
 session_start();
 
+/**
+ * Use the requested controller, if available.  Otherwise, use the default
+ * TODO a routes file to check against requests would obviate `is_readable`
+ */
 if ($controller) {
    list($cont) = $controller;
 

@@ -52,3 +52,7 @@ $("#traversal-methods a").on('click', function (e) {
       });
    ;
 });
+
+String.prototype.px = function () {
+   return parseInt(this.replace('px', ''));
+}

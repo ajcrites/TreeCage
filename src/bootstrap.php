@@ -32,6 +32,6 @@ if ($controller) {
    }
 }
 else {
-   require CONTROLLERS . '/index.php';
+   require CONTROLLERS . '/main.php';
 }
 ?>

@@ -7,11 +7,12 @@
  */
 
 function __tree_autoload($class) {
-   if (file_exists("src/$class.php")) {
-      include "src/$class.php";
+   $pbts = 'php-binary-tree/src';
+   if (file_exists("$pbts/$class.php")) {
+      include "$pbts/$class.php";
    }
-   else if (file_exists("src/node/$class.php")) {
-      include "src/node/$class.php";
+   else if (file_exists("$pbts/node/$class.php")) {
+      include "$pbts/node/$class.php";
    }
 }
 spl_autoload_register('__tree_autoload');

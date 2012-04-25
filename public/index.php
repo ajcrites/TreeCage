@@ -10,6 +10,16 @@ if (!isset($_SERVER['APPROOT'])) {
    exit('App root environment not found.  Run this from the browser or use the deploy script');
 }
 $app = $_SERVER['APPROOT'];
-set_include_path(get_include_path() . ":$app/lib/php-binary-tree" . ":$app/src");
 
+//disguise filename
+if (strpos($_SERVER['REQUEST_URI'], 'index.') !== false) {
+   header('Location: /');
+   exit;
+}
+
+set_include_path(get_include_path() . ":$app/src:$app/lib");
+define('CONTROLLERS', "$app/src/controllers");
+define('VIEWS', "$app/src/view");
+
+require 'bootstrap.php';
 ?>

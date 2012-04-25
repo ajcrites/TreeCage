@@ -13,7 +13,7 @@ function route() {
       array_filter(
          explode('/'
             , parse_url(
-               $_SERVER['REQUEST_URI']
+               str_replace($_SERVER['ROOT'], '', $_SERVER['REQUEST_URI'])
                , PHP_URL_PATH
             )
          )
@@ -30,7 +30,7 @@ if ($controller) {
       require CONTROLLERS . "$cont.php";
    }
    else {
-      require CONTROLLERS . "404.php";
+      require CONTROLLERS . "/404.php";
    }
 }
 else {

@@ -1,9 +1,15 @@
+#nojs {
+   font-size: 150%;
+   color: #A00;
+   font-weight: bold;
+   margin-top: 10%;
+}
 #js, #traversal-methods {
    display: none;
    margin-top: 10%;
 }
 body {
-   font-family: "Trebuchet MS" "DejaVu Sans";
+   font-family: "Trebuchet MS", "DejaVu Sans";
    background-color: #0AF;
    text-align: center;
    padding-left: 15%;
